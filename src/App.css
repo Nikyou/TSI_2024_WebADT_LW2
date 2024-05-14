@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #17181f;
+  color: #ddd;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  max-width: 320px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #1f2029;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  border: 3px solid #30313D;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+form input[type="text"] {
+  background: none;
+  color: #fff;
+  border: 0;
+  padding: 0 8px;
+  flex: 1;
+  font-size: 16px;
+  outline: none;
+}
+
+form button {
+  background-color: #61DAFB;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #17181f;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #52c0e7;
+}
+
+div.task {
+  background-color: #30313D;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s linear;
+}
+
+div.task svg {
+  height: 20px;
+  margin-right: 10px;
+  fill: #61DAFB;
+}
+
+div.task.done {
+  opacity: 0.5;
+}
+
+div.task-name,
+div.task form {
+  flex-grow: 1;
+}
+
+div.task span {
+  position: relative;
+  font-size: 16px;
+}
+
+div.task span:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: width 0.1s linear;
+}
+
+div.task.done span:before {
+  width: 100%;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+div.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+div.checkbox svg {
+  fill: #61DAFB;
+}
+
+button.trash {
+  background: none;
+  border: none;
+  display: flex;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+button.trash:hover {
+  transform: scale(1.1);
+}
+
+button.trash svg {
+  fill: #888;
+  height: 14px;
+}
+
+div.task input {
+  background-color: #1f2029;
+  color: #fff;
+  border: 2px solid #555;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
 }
